@@ -11,6 +11,10 @@
 		047ACC052A06403200747D88 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047ACC042A06403200747D88 /* ContentView.swift */; };
 		047ACC072A06403500747D88 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 047ACC062A06403500747D88 /* Assets.xcassets */; };
 		047ACC0A2A06403500747D88 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 047ACC092A06403500747D88 /* Preview Assets.xcassets */; };
+		047ACC112A0640AF00747D88 /* quoteCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047ACC102A0640AF00747D88 /* quoteCard.swift */; };
+		047ACC172A06416900747D88 /* icon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047ACC162A06416900747D88 /* icon.swift */; };
+		047ACC192A0641B900747D88 /* facts.json in Resources */ = {isa = PBXBuildFile; fileRef = 047ACC182A0641B900747D88 /* facts.json */; };
+		047ACC1B2A06428500747D88 /* bg.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047ACC1A2A06428500747D88 /* bg.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +23,10 @@
 		047ACC042A06403200747D88 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		047ACC062A06403500747D88 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		047ACC092A06403500747D88 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		047ACC102A0640AF00747D88 /* quoteCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = quoteCard.swift; sourceTree = "<group>"; };
+		047ACC162A06416900747D88 /* icon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = icon.swift; sourceTree = "<group>"; };
+		047ACC182A0641B900747D88 /* facts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = facts.json; sourceTree = "<group>"; };
+		047ACC1A2A06428500747D88 /* bg.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bg.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +59,11 @@
 		047ACC012A06403200747D88 /* QoTD */ = {
 			isa = PBXGroup;
 			children = (
+				047ACC132A06411400747D88 /* Resources */,
+				047ACC122A06410300747D88 /* Views */,
 				047ACC022A06403200747D88 /* QoTDApp.swift */,
 				047ACC042A06403200747D88 /* ContentView.swift */,
+				047ACC102A0640AF00747D88 /* quoteCard.swift */,
 				047ACC062A06403500747D88 /* Assets.xcassets */,
 				047ACC082A06403500747D88 /* Preview Content */,
 			);
@@ -65,6 +76,23 @@
 				047ACC092A06403500747D88 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		047ACC122A06410300747D88 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				047ACC162A06416900747D88 /* icon.swift */,
+				047ACC1A2A06428500747D88 /* bg.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		047ACC132A06411400747D88 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				047ACC182A0641B900747D88 /* facts.json */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,6 +154,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				047ACC0A2A06403500747D88 /* Preview Assets.xcassets in Resources */,
+				047ACC192A0641B900747D88 /* facts.json in Resources */,
 				047ACC072A06403500747D88 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -137,8 +166,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				047ACC112A0640AF00747D88 /* quoteCard.swift in Sources */,
 				047ACC052A06403200747D88 /* ContentView.swift in Sources */,
 				047ACC032A06403200747D88 /* QoTDApp.swift in Sources */,
+				047ACC1B2A06428500747D88 /* bg.swift in Sources */,
+				047ACC172A06416900747D88 /* icon.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
