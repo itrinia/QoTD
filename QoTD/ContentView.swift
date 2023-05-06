@@ -11,7 +11,7 @@ struct ContentView: View {
     @State private var facts:[String] = []
     @State private var currentFact: String = ""
     @State private var showSuccessAlert = false
-    @State private var backgroundColor = Color.blue
+    @State private var backgroundColor =  Color(UIColor(red: 1.0, green: 0.41, blue: 0.38, alpha: 1.0))
     var body: some View {
         GeometryReader { reader in
             VStack {
@@ -27,7 +27,7 @@ struct ContentView: View {
                 .cornerRadius(20)
                 .padding(.horizontal)
                 HStack(spacing:10){
-                    icon(icon: "arrowshape.turn.up.right.circle", text: "Next", position: .trailing) {
+                    icon(icon: "arrowshape.turn.up.right.circle", text: "Next Quote", position: .trailing) {
                         updateQuotes()
                     }
                 }

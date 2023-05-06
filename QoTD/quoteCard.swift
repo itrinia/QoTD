@@ -33,30 +33,3 @@ struct quoteCard: View {
         }
     }
 }
-
-extension quoteCard {
-    func asImage() -> UIImage {
-        let width = UIScreen.main.bounds.size.width - 40
-        let height = UIScreen.main.bounds.size.height/2
-        let controller = UIHostingController(rootView: self)
-        controller.view.frame = CGRect(x: 0, y: height/2, width: width, height: height)
-        let imageSize = controller.view.bounds.size
-        let renderer = UIGraphicsImageRenderer(size: imageSize)
-        let image = renderer.image { context in
-            controller.view.drawHierarchy(in: controller.view.bounds, afterScreenUpdates: true)
-            // Add watermark
-            let watermarkText = "Generated using © Learn You Desire"
-            let watermarkAttributes = [
-                NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14),
-                NSAttributedString.Key.foregroundColor: UIColor.darkGray
-            ]
-            let watermarkSize = watermarkText.size(withAttributes: watermarkAttributes)
-            let watermarkRect = CGRect(x: imageSize.width - watermarkSize.width - 10,
-                                       y: imageSize.height - watermarkSize.height - 10,
-                                       width: watermarkSize.width,
-                                       height: watermarkSize.height)
-            watermarkText.draw(in: watermarkRect, withAttributes: watermarkAttributes)
-        }
-        return image
-    }
-}
