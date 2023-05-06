@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
+    // Declare @State property wrappers to store the facts array, currentFact, showSuccessAlert, and backgroundColor
     @State private var facts:[String] = []
     @State private var currentFact: String = ""
     @State private var showSuccessAlert = false
@@ -15,36 +16,41 @@ struct ContentView: View {
     var body: some View {
         GeometryReader { reader in
             VStack {
-                Text("Boost Your Day, Today!")
+                // Display a text with a headline font
+                Text("Boost Your Day with Quotivate!")
                     .font(.headline)
+                // Render a quoteCard with the currentFact and backgroundColor bindings
                 quoteCard(fact: $currentFact, backgroundColor: $backgroundColor)
                     .frame(width: reader.size.width - 40, height: reader.size.height/2)
                     .padding([.horizontal,.vertical],20)
+                // Render a color picker with the backgroundColor binding
                 HStack {
                     bg(selectedColor: $backgroundColor)
                 }
                 .background(.thinMaterial)
                 .cornerRadius(20)
                 .padding(.horizontal)
+                // Display an icon button with the text "Next Quote"
                 HStack(spacing:10){
                     icon(icon: "arrowshape.turn.up.right.circle", text: "Next Quote", position: .trailing) {
                         updateQuotes()
                     }
                 }
                 .padding()
-
-
             } .onAppear {
+                // Call loadFacts() and updateQuotes() when the view appears
                 loadFacts()
                 updateQuotes()
             }
         }
     }
     
+    // Function to randomly select a fact from the facts array and set it to the currentFact variable
     private func updateQuotes() {
         self.currentFact = self.facts.randomElement() ?? "No Quotes for today"
     }
     
+    // Function to load quotes from the facts.json file
     private func loadFacts(){
         if let url = Bundle.main.url(forResource: "facts", withExtension: "json") {
             do {
@@ -59,6 +65,7 @@ struct ContentView: View {
     }
 }
 
+// Preview struct for ContentView
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()

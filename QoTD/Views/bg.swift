@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct bg: View {
+    // A binding variable to hold the selected color
     @Binding var selectedColor: Color
+    // An array of preset colors
     private let colors: [Color] = [
         Color(UIColor(red: 1.0, green: 0.41, blue: 0.38, alpha: 1.0)), // pastel red
         Color(UIColor(red: 0.99, green: 0.99, blue: 0.59, alpha: 1.0)), //pastel yellow
@@ -25,6 +27,7 @@ struct bg: View {
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack {
+                // A loop to iterate through the color array
                 ForEach(colors, id:\.self) { color in
                     Circle()
                         .foregroundColor(color)
@@ -32,6 +35,7 @@ struct bg: View {
                         .opacity(color == selectedColor ? 0.5 : 1.0)
                         .scaleEffect(color == selectedColor ? 1.2 : 1.0)
                         .onTapGesture {
+                            // Update the selected color binding variable
                             selectedColor = color
                         }
                 }
